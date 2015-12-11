@@ -53,10 +53,17 @@
 
 <template name="TestContainer">
   <div>
-    {{> Test user=getUser}}
+    {{#with getUser}}
+      {{> Test}}
+    {{/with}}
   </div>
 </template>
 
 <template name="Test">
-  <span>Test Hello, </span>{{getName}}
+  <span>Test Hello,</span> 
+  <span>{{getName}}</span>
+</template>
+
+<template name="nested">
+  <span class="test">nested</span>
 </template>
